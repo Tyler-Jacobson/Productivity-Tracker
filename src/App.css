@@ -14,11 +14,11 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 1px solid red;
-	/* border: 0; */
+	border: 0;
 	font-size: 100%;
 	font: inherit;
-    vertical-align: baseline;
-    text-decoration: none;
+  vertical-align: baseline;
+  text-decoration: none;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -29,6 +29,9 @@ footer, header, hgroup, menu, nav, section {
 .App {
   text-align: center;
   font-family: 'Roboto', sans-serif;
+  color: #535B60;
+  background-color: rgb(247, 247, 247);
+  min-height: 100vh;
 }
 
 /* Nav Styles Start */
@@ -36,6 +39,13 @@ footer, header, hgroup, menu, nav, section {
 .nav-box {
   display: flex;
   justify-content: space-between;
+}
+
+.nav-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 5%;
 }
 
 .nav-logo {
@@ -46,8 +56,11 @@ footer, header, hgroup, menu, nav, section {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 30%;
+  width: 10%;
+}
 
+.nav-link {
+  color: #535B60;
 }
 
 /* Nav Styles End */
@@ -72,9 +85,17 @@ footer, header, hgroup, menu, nav, section {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: aqua;
+  background-color: #19A69D;
+  border: 2px solid #535B60;
   min-height: 80%;
-  border-radius: 200px;
+  border-radius: 300px;
+}
+
+.center-button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 50px;
+  cursor: pointer;
 }
 
 .inner-triangle {
@@ -82,9 +103,18 @@ footer, header, hgroup, menu, nav, section {
   width: 0;
 	height: 0;
 	border-top: 25px solid transparent;
-	border-left: 50px solid #555;
+	border-left: 50px solid rgb(247, 247, 247);
 	border-bottom: 25px solid transparent;
-  cursor: pointer;
+}
+
+.hidden-play-segment {
+  display: none;
+}
+
+.inner-pause-segment {
+  background-color: rgb(247, 247, 247);
+  width: 20px;
+  height: 50px;
 }
 
 .foldout-section-container {
@@ -97,14 +127,85 @@ footer, header, hgroup, menu, nav, section {
 }
 
 .foldout-section-button {
-  height: 70px;
-  width: 20px;
+  position: absolute;
+  border-right: 30px solid #535B60;
+  border-bottom: 20px solid transparent;
+  border-top: 20px solid transparent;
+  height: 80px;
+  left: -30px
+}
+
+.foldout-section-button-inner {
+  position: absolute;
+  border-right: 30px solid #19A69D;
+  border-bottom: 20px solid transparent;
+  border-top: 20px solid transparent;
+  height: 76px;
+  top: -18px;
+  left: 3px;
+}
+
+.chevron-right {
+  position: absolute;
+  top: 15px;
+  left: 3px;
+	border-top: 25px solid transparent;
+	border-left: 30px solid rgb(247, 247, 247);
+	border-bottom: 25px solid transparent;
+}
+
+.chevron-inner-right {
+  position: absolute;
+  top: 25px;
+  left: 3px;
+	border-top: 15px solid transparent;
+	border-left: 20px solid #19A69D;
+	border-bottom: 15px solid transparent;
+}
+
+.chevron-left {
+  position: absolute;
+  top: 15px;
+  left: 1px;
+	border-top: 25px solid transparent;
+	border-right: 30px solid rgb(247, 247, 247);
+	border-bottom: 25px solid transparent;
+}
+
+.chevron-inner-left {
+  position: absolute;
+  top: 25px;
+  left: 11px;
+	border-top: 15px solid transparent;
+	border-right: 20px solid #19A69D;
+	border-bottom: 15px solid transparent;
+}
+
+.foldout-section-padding {
+  position: absolute;
+  border-right: 10px solid #535B60;
+  border-bottom: 20px solid transparent;
+  border-top: 20px solid transparent;
+  height: 160px;
+  width: 0px;
+}
+
+.foldout-section-padding-inner {
+  position: absolute;
+  border-right: 4px solid #19A69D;
+  border-bottom: 8px solid transparent;
+  border-top: 8px solid transparent;
+  height: 160px;
+  width: 0px;
+  left: 3px;
+  top: -8px
 }
 
 .foldout-section {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  margin-left: 13px;
   height: 100%;
 }
 
