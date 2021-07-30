@@ -78,9 +78,6 @@ const Home = function() {
     }
 
     const startAndPause = function() {
-        const date = new Date();
-        const now = date.getTime();
-        const nowSeconds = now / 1000
         play()
         console.log("flipped")
         setTimerRunning(!timerRunning)
