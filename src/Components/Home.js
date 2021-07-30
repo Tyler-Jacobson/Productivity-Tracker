@@ -248,16 +248,25 @@ const Home = function() {
                 <div className={extended ? "foldout-section": "foldout-section hidden"}>
                     <div className="foldout-segment">
                         <p>add minute</p>
-                        <img onClick={() => {simpleUpdateCurrentTime(60); simpleUpdateTotalTime(60);}} alt="click to add one minute" />
+                        <div className="up-arrow" onClick={() => {simpleUpdateCurrentTime(60); simpleUpdateTotalTime(60);}} alt="click to add one minute" >
+                            <span className="up-arrow-chevron-top"/>
+                            <span className="up-arrow-chevron-bottom"/>
+                        </div>
                     </div>
                     <div className="foldout-segment">
                         <p>remove minute</p>
-                        <img onClick={() => {simpleUpdateCurrentTime(-60); simpleUpdateTotalTime(-60);}} alt="click to remove one minute" />
+                        <div className="down-arrow" onClick={() => {simpleUpdateCurrentTime(-60); simpleUpdateTotalTime(-60);}} alt="click to remove one minute" >
+                            <span className="down-arrow-chevron-top"/>
+                            <span className="down-arrow-chevron-bottom"/>
+                        </div>
                     </div>
                     <div className="foldout-segment">
                         <p>set total time</p>
                         <input type="text" name="time" onChange={handleChange} />
-                        <img onClick={submitNewTime} alt="submit new time"/>
+                        <div className="checkmark-icon" onClick={submitNewTime} alt="submit new time"> 
+                            <div className="checkmark-icon-top"/>
+                            <div className="checkmark-icon-bottom"/>
+                        </div>
                     </div>
                     <div className="foldout-segment">
                         <p>add one minute per day</p>
