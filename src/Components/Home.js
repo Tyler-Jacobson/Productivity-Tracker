@@ -262,7 +262,7 @@ const Home = function() {
                     </div>
                     <div className="foldout-segment">
                         <p>set total time</p>
-                        <input type="text" name="time" onChange={handleChange} />
+                        <input className="foldout-segment-input-box" type="text" name="time" onChange={handleChange} />
                         <div className="checkmark-icon" onClick={submitNewTime} alt="submit new time"> 
                             <div className="checkmark-icon-top"/>
                             <div className="checkmark-icon-bottom"/>
