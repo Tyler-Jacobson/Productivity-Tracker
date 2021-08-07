@@ -98,8 +98,8 @@ footer, header, hgroup, menu, nav, section {
   background-color: #19A69D;
   border: 2px solid #535B60;
   border-radius: 370px;
-  height: 370px;
-  width: 370px;
+  height: 80vw;
+  width: 80vw;
 }
 
 .center-button-container {
