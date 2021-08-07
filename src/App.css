@@ -85,7 +85,7 @@ footer, header, hgroup, menu, nav, section {
 .center-content-container {
   display: flex;
   width: 400px;
-  height: 50vh;
+  height: 500px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -98,8 +98,8 @@ footer, header, hgroup, menu, nav, section {
   background-color: #19A69D;
   border: 2px solid #535B60;
   border-radius: 370px;
-  height: 80vw;
-  width: 80vw;
+  height: 370px;
+  width: 370px;
 }
 
 .center-button-container {
