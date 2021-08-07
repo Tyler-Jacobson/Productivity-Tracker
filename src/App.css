@@ -83,8 +83,12 @@ footer, header, hgroup, menu, nav, section {
 }
 
 .center-content-container {
+  display: flex;
   width: 400px;
   height: 50vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 } 
 
 .center-circle {
@@ -93,8 +97,9 @@ footer, header, hgroup, menu, nav, section {
   align-items: center;
   background-color: #19A69D;
   border: 2px solid #535B60;
-  min-height: 80%;
-  border-radius: 300px;
+  border-radius: 370px;
+  height: 370px;
+  width: 370px;
 }
 
 .center-button-container {
