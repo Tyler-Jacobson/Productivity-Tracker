@@ -85,7 +85,7 @@ footer, header, hgroup, menu, nav, section {
 .center-content-container {
   display: flex;
   width: 400px;
-  height: 50vh;
+  height: 500px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
