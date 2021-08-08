@@ -32,6 +32,7 @@ footer, header, hgroup, menu, nav, section {
   color: #535B60;
   background-color: rgb(247, 247, 247);
   min-height: 100vh;
+  background-image: url(./assets/background.png);
 }
 
 /* Nav Styles Start */
@@ -39,6 +40,8 @@ footer, header, hgroup, menu, nav, section {
 .nav-box {
   display: flex;
   justify-content: space-between;
+  min-height: 80px;
+  background-color: #c5c5c5af;
 }
 
 .nav-logo-container {
@@ -65,8 +68,11 @@ footer, header, hgroup, menu, nav, section {
   align-items: center;
   width: 130px;
   height: 50px;
-  color: #535B60;
-  background-color: rgb(236, 236, 236);
+  border: 1px solid #535B60;
+  color: rgb(236, 236, 236);
+  background-color: #19A69D;
+  /* background-color: rgb(236, 236, 236); */
+  border-radius: 3px;
 }
 
 /* Nav Styles End */
@@ -79,7 +85,8 @@ footer, header, hgroup, menu, nav, section {
   /* flex-direction: column; */
   justify-content: center;
   align-items: center;
-  min-height: 70vh;
+  min-height: 80vh;
+  
 }
 
 .center-content-container {
@@ -96,7 +103,7 @@ footer, header, hgroup, menu, nav, section {
   justify-content: center;
   align-items: center;
   background-color: #19A69D;
-  border: 2px solid #535B60;
+  border: 1px solid #535B60;
   border-radius: 370px;
   height: 370px;
   min-height: 370px;
@@ -143,19 +150,19 @@ footer, header, hgroup, menu, nav, section {
   border-right: 30px solid #535B60;
   border-bottom: 20px solid transparent;
   border-top: 20px solid transparent;
-  height: 80px;
+  height: 82px;
   left: -30px;
   cursor: pointer;
 }
 
 .foldout-section-button-inner {
   position: absolute;
-  border-right: 30px solid #19A69D;
-  border-bottom: 20px solid transparent;
-  border-top: 20px solid transparent;
-  height: 76px;
-  top: -18px;
-  left: 3px;
+  border-right: 32px solid #19A69D;
+  border-bottom: 21px solid transparent;
+  border-top: 21px solid transparent;
+  height: 80px;
+  top: -20px;
+  left: 1px;
 }
 
 .chevron-right {
@@ -199,20 +206,20 @@ footer, header, hgroup, menu, nav, section {
   border-right: 10px solid #535B60;
   border-bottom: 20px solid transparent;
   border-top: 20px solid transparent;
-  height: 160px;
+  height: 155px;
   width: 0px;
   cursor: pointer;
 }
 
 .foldout-section-padding-inner {
   position: absolute;
-  border-right: 4px solid #19A69D;
-  border-bottom: 8px solid transparent;
-  border-top: 8px solid transparent;
-  height: 160px;
+  border-right: 8px solid #19A69D;
+  border-bottom: 15px solid transparent;
+  border-top: 15px solid transparent;
+  height: 155px;
   width: 0px;
-  left: 3px;
-  top: -8px
+  left: 1px;
+  top: -15px
 }
 
 .foldout-section {
