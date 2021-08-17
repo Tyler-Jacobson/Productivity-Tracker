@@ -35,8 +35,6 @@ footer, header, hgroup, menu, nav, section {
   --gray: #4FB3A5;
   --turquoise: #66E6D5;
   --white: #2D665E;
-
-  --ruddy-orange: #99391C;
 }
 
 .App {
@@ -46,7 +44,6 @@ footer, header, hgroup, menu, nav, section {
   background-color: var(--white);
   min-height: 100vh;
   background-image: url(./assets/background.png);
-
 }
 
 /* Nav Styles Start */
@@ -57,6 +54,12 @@ footer, header, hgroup, menu, nav, section {
   min-height: 80px;
   background-color: #c5c5c5af;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.nav-box-color-swap {
+  --gray: #4FB3A5;
+  --turquoise: rgb(45, 217, 247);
+  --white: #2D665E;
 }
 
 .nav-logo-container {
@@ -89,6 +92,7 @@ footer, header, hgroup, menu, nav, section {
   border-radius: 3px;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
   position: relative;
+  overflow: hidden;
 }
 
 /* Nav Styles End */
@@ -102,7 +106,12 @@ footer, header, hgroup, menu, nav, section {
   justify-content: center;
   align-items: center;
   min-height: 80vh;
-  
+}
+
+.home-screen-box-color-swap {
+  --gray: #4FB3A5;
+  --turquoise: rgb(45, 217, 247);
+  --white: #2D665E;
 }
 
 .center-content-container {
@@ -133,7 +142,7 @@ footer, header, hgroup, menu, nav, section {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   border: 1px solid var(--gray);
   border-radius: 370px;
   height: 370px;
@@ -230,6 +239,7 @@ footer, header, hgroup, menu, nav, section {
   height: 80px;
   top: -20px;
   left: 1px;
+  
 }
 
 .chevron-right {
