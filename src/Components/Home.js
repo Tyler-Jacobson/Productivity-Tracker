@@ -57,11 +57,12 @@ const setTotalTimeDefaultValue = function() {
     }
 }
 
+const Home = function(props) {
 
-const Home = function() {
+    const timerRunning = props.timerRunning;
+    const setTimerRunning = props.setTimerRunning;
 
     const [ extended, setExtended ] = useState(false);
-    const [ timerRunning, setTimerRunning ] = useState(false);
     const [ currentTime, setCurrentTime ] = useState(setCurrentTimeDefaultValue());
     const [ totalTime, setTotalTime ] = useState(setTotalTimeDefaultValue())
     const [ formValue, setFormValue ] = useState({ time: ""});
@@ -112,14 +113,16 @@ const Home = function() {
             const newTimeSeconds = hours + minutes
             cookies.set('totalTime', newTimeSeconds, { path: '/'})
             cookies.set('currentTime', newTimeSeconds, { path: '/'})
-            setCurrentTime(newTimeSeconds)
+            simpleUpdateCurrentTime(newTimeSeconds - currentTime)
+            simpleUpdateTotalTime(newTimeSeconds - currentTime)
         } else {
             const intTime = parseInt(formValue.time)
             if (!Number.isNaN(intTime)) { 
                 const newTimeSeconds = intTime * 60
                 cookies.set('totalTime', newTimeSeconds, { path: '/'})
                 cookies.set('currentTime', newTimeSeconds, { path: '/'})
-                setCurrentTime(newTimeSeconds)
+                simpleUpdateCurrentTime(newTimeSeconds - currentTime)
+                simpleUpdateTotalTime(newTimeSeconds - currentTime)
             }
         }
     }
@@ -155,6 +158,48 @@ const Home = function() {
             alarm();
         }
     }
+
+
+    const button = document.getElementsByClassName("center-circle")[0];
+    const button2 = document.getElementsByClassName("nav-link")[0];
+    
+    const buttonsList = [button, button2]
+
+    function createRipple(event, button) {
+
+        const circle = document.createElement("span");
+        const diameter = Math.max(button.clientWidth, button.clientHeight);
+        const radius = diameter / 2;
+        circle.style.width = circle.style.height = `${diameter}px`;
+        circle.style.left = `${(radius) / 100}px`;
+        circle.style.top = `${(radius) / 100}px`;
+        circle.classList.add(timerRunning ? "ripple-to-color-2" : "ripple-to-color-1");
+        const ripple = button.getElementsByClassName("ripple")[0];
+        
+        if (ripple) {
+          ripple.remove();
+        }
+      
+        button.appendChild(circle);
+      }
+
+    //   function createRipple(event) {
+    //     const button = document.getElementsByClassName("center-circle")[0];
+    //     const circle = document.createElement("span");
+    //     const diameter = Math.max(button.clientWidth, button.clientHeight);
+    //     const radius = diameter / 2;
+    //     circle.style.width = circle.style.height = `${diameter}px`;
+    //     circle.style.left = `${event.clientX - (button.offsetLeft + radius)}px`;
+    //     circle.style.top = `${event.clientY - (button.offsetTop + radius)}px`;
+    //     circle.classList.add(timerRunning ? "ripple-to-color-2" : "ripple-to-color-1");
+    //     const ripple = button.getElementsByClassName("ripple")[0];
+      
+    //     if (ripple) {
+    //       ripple.remove();
+    //     }
+      
+    //     button.appendChild(circle);
+    //   }
 
     useEffect(() => {
 
@@ -216,19 +261,19 @@ const Home = function() {
     })
 
     return (
-        <div className="home-screen-box">
+        <div className={timerRunning ? "home-screen-box home-screen-box-color-swap" : "home-screen-box"}>
             <div className="center-content-container">
-                <div className="center-circle">
-                    <div className="center-button-container" onClick={startAndPause}>
+                <button className={timerRunning ? "center-circle center-circle-color-1" : "center-circle center-circle-color-2"}>
+                    <span className="center-button-container" onClick={(e) => {startAndPause(); for (let i = 0; i < buttonsList.length; i++) {createRipple(e, buttonsList[i])} }}>
                         <div className={timerRunning ? "inner-pause-segment" : "inner-triangle"}/>
                         <div className={timerRunning ? "inner-pause-segment" : "hidden-play-segment"}/>
-                    </div>
-                </div>
+                    </span>
+                </button>
                 <div className="time-text-container">
                     {/* (parseInt(totalTime - currentTime) % 1800) > 1500 ? timeConvert((currentTime % 1800) - 300) : "Break Time " + (totalTime - currentTime) % 1800 */}
                     {/* parseInt(totalTime - currentTime) % 1800 + " is not greater than 1500" */}
-                    <p>until break: {displayTimeUntilBreak()} </p>
-                    <p>total remaining: {currentTime > 0 ? timeConvert(currentTime) : "Time's Up!"}</p>
+                    <p>Until Break: {displayTimeUntilBreak()} </p>
+                    <p>Total Remaining: {currentTime > 0 ? timeConvert(currentTime) : "Time's Up!"}</p>
                 </div>
             </div>
             <div className="foldout-section-container">

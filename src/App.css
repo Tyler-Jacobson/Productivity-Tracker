@@ -26,11 +26,22 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
+/* --ruddy-orange: #99391C;
+  --gray: #535353;
+  --turquoise: #19A69D;
+  --white: rgb(247, 247, 247); */
+
+:root {
+  --gray: #4FB3A5;
+  --turquoise: #66E6D5;
+  --white: #2D665E;
+}
+
 .App {
   text-align: center;
   font-family: 'Roboto', sans-serif;
-  color: #535B60;
-  background-color: rgb(247, 247, 247);
+  color: var(--white);
+  background-color: var(--white);
   min-height: 100vh;
   background-image: url(./assets/background.png);
 }
@@ -42,6 +53,13 @@ footer, header, hgroup, menu, nav, section {
   justify-content: space-between;
   min-height: 80px;
   background-color: #c5c5c5af;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.nav-box-color-swap {
+  --gray: #4FB3A5;
+  --turquoise: rgb(45, 217, 247);
+  --white: #2D665E;
 }
 
 .nav-logo-container {
@@ -68,11 +86,13 @@ footer, header, hgroup, menu, nav, section {
   align-items: center;
   width: 130px;
   height: 50px;
-  border: 1px solid #535B60;
-  color: rgb(236, 236, 236);
-  background-color: #19A69D;
-  /* background-color: rgb(236, 236, 236); */
+  border: 1px solid var(--gray);
+  color: var(--white);
+  background-color: var(--turquoise);
   border-radius: 3px;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 
 /* Nav Styles End */
@@ -86,7 +106,12 @@ footer, header, hgroup, menu, nav, section {
   justify-content: center;
   align-items: center;
   min-height: 80vh;
-  
+}
+
+.home-screen-box-color-swap {
+  --gray: #4FB3A5;
+  --turquoise: rgb(45, 217, 247);
+  --white: #2D665E;
 }
 
 .center-content-container {
@@ -98,16 +123,65 @@ footer, header, hgroup, menu, nav, section {
   align-items: center;
 } 
 
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
 .center-circle {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #19A69D;
-  border: 1px solid #535B60;
+
+  border: 1px solid var(--gray);
   border-radius: 370px;
   height: 370px;
   min-height: 370px;
   width: 370px;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.center-circle-color-1 {
+  background-color: rgb(45, 217, 247);
+}
+
+.center-circle-color-2 {
+  background-color: var(--turquoise);
+}
+
+.ripple-to-color-1 {
+  position: absolute; /* The absolute position we mentioned earlier */
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  background-color: rgba(0, 255, 255, 0.7);
+}
+
+.ripple-to-color-2 {
+  position: absolute; /* The absolute position we mentioned earlier */
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  background-color: rgba(47, 226, 226, 0.7);
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
 }
 
 .center-button-container {
@@ -122,8 +196,9 @@ footer, header, hgroup, menu, nav, section {
   width: 0;
 	height: 0;
 	border-top: 25px solid transparent;
-	border-left: 50px solid rgb(247, 247, 247);
+	border-left: 50px solid var(--white);
 	border-bottom: 25px solid transparent;
+  filter: drop-shadow(0px 0px 0.5rem rgba(0, 0, 0, 0.3));
 }
 
 .hidden-play-segment {
@@ -131,7 +206,7 @@ footer, header, hgroup, menu, nav, section {
 }
 
 .inner-pause-segment {
-  background-color: rgb(247, 247, 247);
+  background-color: var(--white);
   width: 20px;
   height: 50px;
 }
@@ -143,11 +218,12 @@ footer, header, hgroup, menu, nav, section {
   display: flex;
   align-items: center;
   height: 200px;
+  
 }
 
 .foldout-section-button {
   position: absolute;
-  border-right: 30px solid #535B60;
+  border-right: 30px solid var(--gray);
   border-bottom: 20px solid transparent;
   border-top: 20px solid transparent;
   height: 82px;
@@ -157,12 +233,13 @@ footer, header, hgroup, menu, nav, section {
 
 .foldout-section-button-inner {
   position: absolute;
-  border-right: 32px solid #19A69D;
+  border-right: 32px solid var(--turquoise);
   border-bottom: 21px solid transparent;
   border-top: 21px solid transparent;
   height: 80px;
   top: -20px;
   left: 1px;
+  
 }
 
 .chevron-right {
@@ -170,7 +247,7 @@ footer, header, hgroup, menu, nav, section {
   top: 13px;
   left: 3px;
 	border-top: 25px solid transparent;
-	border-left: 30px solid rgb(247, 247, 247);
+	border-left: 30px solid var(--white);
 	border-bottom: 25px solid transparent;
 }
 
@@ -179,7 +256,7 @@ footer, header, hgroup, menu, nav, section {
   top: 23px;
   left: 3px;
 	border-top: 15px solid transparent;
-	border-left: 20px solid #19A69D;
+	border-left: 20px solid var(--turquoise);
 	border-bottom: 15px solid transparent;
 }
 
@@ -188,7 +265,7 @@ footer, header, hgroup, menu, nav, section {
   top: 13px;
   left: 1px;
 	border-top: 25px solid transparent;
-	border-right: 30px solid rgb(247, 247, 247);
+	border-right: 30px solid var(--white);
 	border-bottom: 25px solid transparent;
 }
 
@@ -197,13 +274,13 @@ footer, header, hgroup, menu, nav, section {
   top: 23px;
   left: 11px;
 	border-top: 15px solid transparent;
-	border-right: 20px solid #19A69D;
+	border-right: 20px solid var(--turquoise);
 	border-bottom: 15px solid transparent;
 }
 
 .foldout-section-padding {
   position: absolute;
-  border-right: 10px solid #535B60;
+  border-right: 10px solid var(--gray);
   border-bottom: 20px solid transparent;
   border-top: 20px solid transparent;
   height: 155px;
@@ -213,7 +290,7 @@ footer, header, hgroup, menu, nav, section {
 
 .foldout-section-padding-inner {
   position: absolute;
-  border-right: 8px solid #19A69D;
+  border-right: 8px solid var(--turquoise);
   border-bottom: 15px solid transparent;
   border-top: 15px solid transparent;
   height: 155px;
@@ -232,6 +309,7 @@ footer, header, hgroup, menu, nav, section {
   height: 100%;
   background-color: rgb(236, 236, 236);
   width: 380px;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
 }
 
 .hidden {
@@ -245,12 +323,12 @@ footer, header, hgroup, menu, nav, section {
 
 
 .up-arrow {
-  background-color: #19A69D;
+  background-color: var(--turquoise);
   width: 24px;
   height: 24px;
   border-radius: 100%;
   margin-left: 5px;
-  border: 1px solid #535B60;
+  border: 1px solid var(--gray);
   cursor: pointer;
   user-select: none;
 }
@@ -260,7 +338,7 @@ footer, header, hgroup, menu, nav, section {
   top: -15px;
   left: 4px;
 	border-left: 8px solid transparent;
-	border-bottom: 14px solid rgb(247, 247, 247);
+	border-bottom: 14px solid var(--white);
 	border-right: 8px solid transparent;
   
 }
@@ -270,17 +348,17 @@ footer, header, hgroup, menu, nav, section {
   top: -9px;
   left: -8px;
 	border-left: 4px solid transparent;
-	border-bottom: 8px solid #19A69D;
+	border-bottom: 8px solid var(--turquoise);
 	border-right: 4px solid transparent;
 }
 
 .down-arrow {
-  background-color: #19A69D;
+  background-color: var(--turquoise);
   width: 24px;
   height: 24px;
   border-radius: 100%;
   margin-left: 5px;
-  border: 1px solid #535B60;
+  border: 1px solid var(--gray);
   cursor: pointer;
   user-select: none;
 }
@@ -290,7 +368,7 @@ footer, header, hgroup, menu, nav, section {
   top: 21px;
   left: 4px;
 	border-left: 8px solid transparent;
-	border-top: 14px solid rgb(247, 247, 247);
+	border-top: 14px solid var(--white);
 	border-right: 8px solid transparent;
   
 }
@@ -300,21 +378,26 @@ footer, header, hgroup, menu, nav, section {
   top: 15px;
   left: -8px;
 	border-left: 4px solid transparent;
-	border-top: 8px solid #19A69D;
+	border-top: 8px solid var(--turquoise);
 	border-right: 4px solid transparent;
 }
 
 .foldout-segment-input-box {
   margin-left: 5px;
+  border: 1px solid var(--white);
+}
+
+.foldout-segment-input-box:focus {
+  outline: 1px solid var(--turquoise);
 }
 
 .checkmark-icon {
-  background-color: #19A69D;
+  background-color: var(--turquoise);
   width: 24px;
   height: 24px;
   border-radius: 100%;
   margin-left: 5px;
-  border: 1px solid #535B60;
+  border: 1px solid var(--gray);
   cursor: pointer;
   user-select: none;
 }
@@ -326,7 +409,7 @@ footer, header, hgroup, menu, nav, section {
   left: 2px;
   width: 20px;
   height: 10px;
-  background-color: white;
+  background-color: var(--white);
 }
 
 .checkmark-icon-bottom {
@@ -336,5 +419,9 @@ footer, header, hgroup, menu, nav, section {
   left: 6px;
   width: 14px;
   height: 7px;
-  background-color: #19A69D;
+  background-color: var(--turquoise);
 }
+
+
+
+
